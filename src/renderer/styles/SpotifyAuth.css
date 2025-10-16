@@ -4,7 +4,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #FFF8F0 0%, #FFF0E5 100%);
+  /* Use app background, keep transparent here */
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -34,15 +35,14 @@
 }
 
 .auth-card {
-  background: rgba(255, 255, 255, 0.9);
-  border: 4px solid var(--border-color);
-  border-radius: 30px;
-  padding: 50px 60px;
-  max-width: 500px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(14px) saturate(120%);
+  border: 3px dashed var(--border-color);
+  border-radius: 24px;
+  padding: 36px 40px;
+  max-width: 520px;
   text-align: center;
-  box-shadow: 
-    0 20px 60px var(--shadow-color),
-    inset 0 2px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: 0 14px 36px var(--shadow-color);
   position: relative;
   animation: slideUp 0.6s ease-out;
 }
@@ -58,22 +58,12 @@
   }
 }
 
-/* Cute corner stickers */
-.auth-card::before {
-  content: '⭐';
-  position: absolute;
-  top: -15px;
-  right: 30px;
-  font-size: 32px;
-  transform: rotate(15deg);
-  animation: twinkle 3s ease-in-out infinite;
-}
 
 .vinyl-icon {
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 30px;
-  animation: spin-slow 20s linear infinite;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+  animation: spin-slow 18s linear infinite;
 }
 
 @keyframes spin-slow {
@@ -83,11 +73,11 @@
 
 .auth-card h1 {
   font-family: var(--font-handwriting);
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 15px 0;
-  text-shadow: 2px 2px 0px var(--accent-pink);
+  text-shadow: 2px 2px 0px rgba(var(--accent-dynamic-rgb), 0.6);
 }
 
 .subtitle {
@@ -100,38 +90,35 @@
 .spotify-login-btn {
   background: #1DB954;
   color: white;
-  border: 4px solid var(--text-primary);
-  border-radius: 25px;
-  padding: 16px 32px;
+  border: 3px solid var(--text-primary);
+  border-radius: 20px;
+  padding: 14px 28px;
   font-family: var(--font-cute);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  box-shadow: 6px 6px 0px var(--text-primary);
-  margin-bottom: 25px;
+  gap: 10px;
+  transition: all 0.25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 4px 4px 0px var(--text-primary);
+  margin-bottom: 22px;
 }
 
 .spotify-login-btn:hover {
   background: #1ED760;
-  transform: translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--text-primary);
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0px var(--text-primary);
 }
 
-.spotify-login-btn:active {
-  transform: translate(4px, 4px);
-  box-shadow: 2px 2px 0px var(--text-primary);
-}
+.spotify-login-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px var(--text-primary); }
 
 .info-box {
-  background: #FFF4E5;
+  background: rgba(255, 244, 229, 0.9);
   border: 3px dashed var(--accent-peach);
   border-radius: 15px;
-  padding: 15px 20px;
-  margin-top: 25px;
+  padding: 12px 16px;
+  margin-top: 18px;
 }
 
 .info-text {
