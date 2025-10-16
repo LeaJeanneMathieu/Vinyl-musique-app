@@ -1,0 +1,20 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="#1a1a1a"/>
+  
+  <!-- Vinyl grooves -->
+  <circle cx="128" cy="128" r="115" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  <circle cx="128" cy="128" r="105" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  <circle cx="128" cy="128" r="95" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  <circle cx="128" cy="128" r="85" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  <circle cx="128" cy="128" r="75" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  <circle cx="128" cy="128" r="65" fill="none" stroke="#2a2a2a" stroke-width="3"/>
+  
+  <!-- Center label -->
+  <circle cx="128" cy="128" r="50" fill="#FFB5C5"/>
+  <circle cx="128" cy="128" r="45" fill="#FF9FB3"/>
+  
+  <!-- Center hole -->
+  <circle cx="128" cy="128" r="12" fill="#1a1a1a"/>
+</svg>
+

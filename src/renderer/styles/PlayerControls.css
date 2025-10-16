@@ -1,0 +1,318 @@
+.player-controls {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 3px solid var(--border-color);
+  border-radius: 50px;
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.controls-left,
+.controls-center,
+.controls-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.controls-center { gap: 18px; }
+
+.control-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--text-primary);
+  background: white;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 4px 4px 0px var(--text-primary);
+  position: relative;
+}
+
+.control-btn:hover {
+  background: rgba(var(--accent-dynamic-rgb), 0.15);
+  transform: translateY(-3px);
+  box-shadow: 5px 7px 0px var(--text-primary);
+}
+
+.control-btn:active {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px var(--text-primary);
+}
+
+.control-btn svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.control-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.play-pause-btn {
+  width: 80px;
+  height: 80px;
+  background: var(--accent-dynamic);
+  color: white;
+  border-color: var(--text-primary);
+  box-shadow: 6px 6px 0px var(--text-primary);
+}
+
+.play-pause-btn:hover {
+  background: rgba(var(--accent-dynamic-rgb), 0.85);
+  box-shadow: 7px 9px 0px var(--text-primary);
+}
+
+.play-pause-btn:active {
+  box-shadow: 3px 3px 0px var(--text-primary);
+}
+
+.play-pause-btn svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Cute ripple effect on click */
+.control-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(var(--accent-dynamic-rgb), 0.35);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+/* Repeat button styling */
+.repeat-btn {
+  background: white;
+}
+
+.volume-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 140px;
+  height: 8px;
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-dynamic);
+  border: 2px solid var(--text-primary);
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-dynamic);
+  border: 2px solid var(--text-primary);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .volume-slider { width: 110px; }
+}
+
+@media (max-width: 600px) {
+  .volume-slider { width: 90px; }
+}
+
+@media (max-width: 480px) {
+  .volume-slider { width: 80px; }
+}
+
+.repeat-btn.active {
+  background: var(--accent-dynamic);
+  color: white;
+}
+
+.repeat-btn:hover {
+  background: rgba(var(--accent-dynamic-rgb), 0.85);
+}
+
+.repeat-btn.single::after {
+  content: '1';
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-size: 12px;
+  color: var(--text-primary);
+  background: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--text-primary);
+}
+
+.control-btn:active::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* Shuffle button styling */
+.shuffle-btn {
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.shuffle-btn.active {
+  background: var(--accent-dynamic);
+  color: white;
+  border-color: var(--text-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.shuffle-btn.active svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.shuffle-btn:hover {
+  background: rgba(var(--accent-dynamic-rgb), 0.85);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 4px 4px 0px var(--text-primary);
+  }
+  50% {
+    box-shadow: 4px 4px 0px var(--text-primary), 0 0 15px var(--accent-mint);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .player-controls {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .control-btn {
+    width: 50px;
+    height: 50px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0px var(--text-primary);
+  }
+
+  .control-btn:hover {
+    box-shadow: 4px 5px 0px var(--text-primary);
+  }
+
+  .control-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .play-pause-btn {
+    width: 65px;
+    height: 65px;
+    box-shadow: 5px 5px 0px var(--text-primary);
+  }
+
+  .play-pause-btn:hover {
+    box-shadow: 6px 7px 0px var(--text-primary);
+  }
+
+  .play-pause-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .shuffle-btn.active {
+    animation: pulse-small 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-small {
+    0%, 100% {
+      box-shadow: 3px 3px 0px var(--text-primary);
+    }
+    50% {
+      box-shadow: 3px 3px 0px var(--text-primary), 0 0 12px var(--accent-mint);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .player-controls {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .control-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .control-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .play-pause-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .play-pause-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-controls {
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .control-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .play-pause-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .play-pause-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+}
+

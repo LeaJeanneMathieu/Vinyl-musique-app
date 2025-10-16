@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap');
+
+:root {
+  /* Pastel color palette - cute and soft */
+  --bg-primary: #FFF8F0;
+  --bg-secondary: #FFF0E5;
+  --bg-card: #FFFAF5;
+  --text-primary: #5A4A42;
+  --text-secondary: #8B7E74;
+  --accent-pink: #FFB5C5;
+  --accent-peach: #FFCCB3;
+  --accent-lavender: #D5C6E0;
+  --accent-mint: #B5EAD7;
+  --accent-yellow: #FFF4B8;
+  --shadow-color: rgba(90, 74, 66, 0.1);
+  --border-color: #E8DED2;
+  --accent-dynamic: var(--accent-pink);
+  --accent-dynamic-rgb: 255, 181, 197;
+  
+  /* Typography */
+  --font-handwriting: 'Caveat', cursive;
+  --font-cute: 'Patrick Hand', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+body {
+  font-family: var(--font-cute);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root.compact {
+  height: auto;
+  min-height: unset;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Cute doodle decorations */
+.doodle-star {
+  position: absolute;
+  color: var(--accent-yellow);
+  opacity: 0.3;
+  font-size: 24px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* Hide scrollbars but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+/* Paper texture (subtle) */
+.paper-texture {
+  background:
+    radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px) 0 0/6px 6px,
+    linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02)),
+    var(--bg-primary);
+}
+
+/* (Dark theme removed per user preference) */
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+

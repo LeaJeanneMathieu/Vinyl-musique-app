@@ -1,0 +1,59 @@
+.stickers-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sticker-toolbar {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.sticker-btn {
+  background: var(--bg-card);
+  border: 3px solid var(--text-primary);
+  border-radius: 14px;
+  padding: 6px 10px;
+  font-family: var(--font-cute);
+  cursor: pointer;
+  box-shadow: 3px 3px 0 var(--text-primary);
+}
+
+.sticker {
+  position: absolute;
+  pointer-events: auto;
+  user-select: none;
+  transform-origin: center;
+}
+
+.sticker span { font-size: 28px; text-shadow: 1px 1px 0 rgba(0,0,0,0.08); }
+
+.sticker .sticker-delete {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--text-primary);
+  background: var(--accent-yellow);
+  color: var(--text-primary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.sticker .tape {
+  width: 42px;
+  height: 16px;
+  background: var(--accent-peach);
+  border: 2px dashed var(--text-primary);
+  border-radius: 4px;
+  transform: rotate(-8deg);
+}
+
+
